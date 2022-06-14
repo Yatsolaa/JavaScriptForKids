@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        var words = ["програма", "екран", "кішка", "стіна", "сонце", "дах", "телефон", "портфель", "книга", "ліжко", "шкіра", "посуд", "клавіатура"];
+
+        var word = words[Math.floor(Math.random() * words.length)];
+
+        var answerArray = [];
+
+        for (var i = 0; i < word.length; i++){
+            answerArray[i] = "_";
+        }
+
+        var remainingLetters = word.length;
+
+        var limit = 12;
+
+        while (remainingLetters > 0 && limit > 0){
+            alert(answerArray.join(" "));
+
+            var guess = prompt("Вгадайте літеру або натисність Скасувати для виходу з гри.");
+
+            limit--;
+
+            guess = guess.toLowerCase();
+
+            if (guess === null) {
+                break;
+            } else if (guess.length !== 1) {
+                alert("Будь ласка, введіть лише одну літеру")
+            } else {
+
+                for (var j = 0; j < word.length; j++) {
+                    
+                    if (word[j] === guess) {
+                        answerArray[j] = guess;
+                        remainingLetters--;
+                    }
+
+                }
+
+            }
+        }
+
+        alert(answerArray.join(" "));
+        
+        if (limit === 0) {
+            alert("Спроби вичерпано")
+        } else {
+            alert("Чудово! Загадане слово - " + word);
+        }
+
+
+    </script>
+    
+</body>
+</html>
