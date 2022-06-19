@@ -12,7 +12,7 @@
 
         /* 1 */
 
-        function add (x, y) {
+        /* function add (x, y) {
             return x + y;
         }
 
@@ -20,12 +20,121 @@
             return a * b;
         }
 
-        add (multiply (36325, 9824), 777); 
+        add (multiply (36325, 9824), 777);  */
 
         /* 356857577 */
 
         /* 2 */
         
+        /* function areArraysSame(a, b) {
+
+            if (a.length !== b.length){
+                return false;
+            }
+
+            for (let i = 0; i < a.length; i++) {
+
+                if (a[i] !== b [i]) {
+                    return false;
+                }
+
+            }
+
+            return true;
+
+        } */
+
+        /* 3 */
+
+        var pickWord = function () {
+
+            var words = ["програма", "екран", "кішка", "стіна", "сонце", "дах", "телефон", "портфель", "книга", "ліжко", "шкіра", "посуд", "клавіатура"];
+
+            return words[Math.floor(Math.random() * words.length)];
+        };
+
+        var setupAnswerArray = function (word) {
+            // Возвращает итоговый массив для заданного слова word
+
+            var answerArray = [];
+
+            for (var i = 0; i < word.length; i++){
+                answerArray[i] = "_";
+            }
+
+            return answerArray;
+        };
+
+        var showPlayerProgress = function (answerArray) {
+            // С помощью alert отображает текущее состояние игры
+            alert(answerArray.join(" "));
+        };
+
+        var getGuess = function () {
+            // Запрашивает ответ игрока с помощью prompt
+
+            var guess = prompt("Вгадайте літеру або натисність Скасувати для виходу з гри.");
+
+            return guess;
+        };
+
+        var updateGameState = function (guess, word, answerArray) {
+            // Обновляет answerArray согласно ответу игрока (guess)
+            // возвращает число, обозначающее, сколько раз буква guess
+            // встречается в слове, чтобы можно было обновить значение
+            // remainingLetters
+
+            let number = 0;
+
+            for (var j = 0; j < word.length; j++) {
+                    
+                if (word[j] === guess) {
+                    answerArray[j] = guess;
+                    number++;
+                }
+
+            }
+
+            return number;
+
+        };
+
+        var showAnswerAndCongratulatePlayer = function (answerArray) {
+            // С помощью alert показывает игроку отгаданное слово 
+            // и поздравляет его с победой
+
+            alert("Чудово! Загадане слово - " + word);
+        };
+
+        // word: загаданное слово
+        var word = pickWord();
+
+        // answerArray: итоговый массив
+        var answerArray = setupAnswerArray(word);
+
+        // remainingLetters: сколько букв осталось угадать
+        var remainingLetters = word.length;
+
+        while (remainingLetters > 0) {
+
+            showPlayerProgress(answerArray);
+
+            // guess: ответ игрока
+            var guess = getGuess(); 
+
+            if (guess === null) {
+                break;
+            } else if (guess.length !== 1) {
+                alert("Пожалуйста, введите одиночную букву.");
+            } else {
+                // correctGuesses: количество открытых букв
+                var correctGuesses = updateGameState(guess, word, 
+                answerArray);
+                remainingLetters -= correctGuesses;
+            }
+        }
+
+        showAnswerAndCongratulatePlayer(answerArray);
 
     </script>
 
