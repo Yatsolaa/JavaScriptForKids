@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="heading" style="margin: 0;">Hello world!</h1>
+
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+    <script>
+
+        let leftOffset = 0;
+        let topOffset = 0;
+
+        let moveHeading = function () {
+
+            $("#heading").offset({ left: leftOffset, top: topOffset });
+
+            function right() {
+                leftOffset++;
+            }
+
+            function bottom() {
+                topOffset++;
+            }
+
+            function left() {
+                leftOffset--;
+            }
+
+            function top() {
+                topOffset--;
+            }
+
+            if (leftOffset < 201){
+                right();
+            }
+
+            if (leftOffset > 200) {
+                leftOffset = 200;
+                bottom();
+            }
+
+            if (topOffset > 200) {
+                topOffset = 200;
+                left();
+            }
+
+        };
+
+        setInterval(moveHeading, 15);
+
+        /* 2 */
+
+    </script>
+    
+</body>
+</html>
