@@ -8,12 +8,13 @@
 </head>
 <body>
 
-    <canvas id="canvas" width="200" height="200"></canvas>
+    <canvas id="canvas" width="600" height="600"></canvas>
 
     <script>
 
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
+        
         
         /* for (var i = 0; i < 8; i++) {
             ctx.fillRect(i * 10, i * 10, 10, 10);
@@ -25,6 +26,36 @@
         ctx.fillRect(40, 80, 70, 70);
         ctx.fillRect(40, 150, 10, 50);
         ctx.fillRect(100, 150, 10, 50);
+
+        /*  */
+
+        ctx.fillStyle = "Red";
+
+        ctx.fillRect(0, 210, 50, 100);
+
+        ctx.fillStyle = "Green";
+
+        ctx.fillRect(50, 210, 50, 100);
+
+        ctx.fillStyle = "Blue";
+
+        ctx.fillRect(100, 210, 50, 100);
+
+        /*  */
+
+        ctx.fillRect(0, 320, 150, 50);
+
+        ctx.fillStyle = "Yellow";
+
+        ctx.fillRect(0, 370, 150, 50);
+
+        /*  */
+
+        ctx.strokeStyle = "DeepPink";
+        ctx.lineWidth = 4;
+        ctx.strokeRect(0, 430, 30, 10);
+
+        /*  */
 
     </script>
     

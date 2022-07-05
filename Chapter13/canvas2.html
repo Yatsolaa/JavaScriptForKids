@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <canvas id="canvas" width="600" height="600"></canvas>
+
+    <script>
+
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+
+        /* ctx.strokeStyle = "Turquoise";
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(10, 10);
+        ctx.lineTo(60, 60);
+        ctx.moveTo(60, 10);
+        ctx.lineTo(10, 60);
+        ctx.stroke(); */
+
+        //ctx.strokeStyle = "black";
+
+        /* ctx.strokeRect(10, 90, 20, 20);
+        ctx.beginPath(); */
+        /* body line */
+        /* ctx.moveTo(20, 110);
+        ctx.lineTo(20, 150); */
+        /* left hand */
+        /* ctx.moveTo(0, 120);
+        ctx.lineTo(20, 130); */
+        /* right hand */
+        /* ctx.moveTo(40, 120);
+        ctx.lineTo(20, 130); */
+        /* left leg */
+        /* ctx.moveTo(0, 180);
+        ctx.lineTo(20, 150); */
+        /* right leg */
+        /* ctx.moveTo(40, 180);
+        ctx.lineTo(20, 150);
+        ctx.stroke(); */
+
+        /*  */
+
+        /* ctx.fillStyle = "Blue";
+        ctx.beginPath();
+        ctx.moveTo(100, 100);
+        ctx.lineTo(100, 60);
+        ctx.lineTo(130, 30);
+        ctx.lineTo(160, 60);
+        ctx.lineTo(160, 100);
+        ctx.lineTo(100, 100);
+        ctx.fill(); */
+
+        /* arc */
+
+        /* ctx.lineWidth = 2;
+        ctx.strokeStyle = "Green";
+
+        ctx.beginPath();
+        ctx.arc(250, 50, 30, 0, Math.PI / 2, false);
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.arc(310, 50, 30, 0, Math.PI, true)
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(370, 50, 30, 0, Math.PI * 2, false);
+        ctx.stroke(); */
+
+        var circle = function(x, y, radius, fillCircle) {
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+            if (fillCircle == true) {
+                ctx.fill();
+            } else {
+                ctx.stroke();
+            }
+        }
+
+        var drawSnowman = function (x, y) {
+            ctx.lineWidth = 4;
+            ctx.fillStyle = "Black";
+
+            circle(x, y, 50, false);
+            circle(x, y+120, 70, false);
+            circle(x, y+120, 7, true);
+            circle(x, y + 90, 7, true);
+            circle(x, y + 150, 7, true);
+            circle(x - 15, y - 15, 7, true);
+            circle(x + 15, y - 15, 7, true);
+            ctx.fillStyle = "Orange";
+            circle(x, y, 7, true);
+        }
+
+        /* ctx.lineWidth = 4;
+
+        circle(300, 300, 50, false);
+        circle(300, 420, 70, false);
+        circle(300, 420, 7, true);
+        circle(300, 390, 7, true);
+        circle(300, 450, 7, true);
+        circle(285, 285, 7, true);
+        circle(315, 285, 7, true);
+        ctx.fillStyle = "Orange";
+        circle(300, 300, 7, true); */
+
+        /* ctx.lineWidth = 4;
+        ctx.strokeStyle = "Red";
+        circle(100, 100, 10,);
+        ctx.strokeStyle = "Orange";
+        circle(100, 100, 20);
+        ctx.strokeStyle = "Yellow";
+        circle(100, 100, 30);
+        ctx.strokeStyle = "Green";
+        circle(100, 100, 40);
+        ctx.strokeStyle = "Blue";
+        circle(100, 100, 50);
+        ctx.strokeStyle = "Purple";
+        circle(100, 100, 60); */
+
+    </script>
+    
+</body>
+</html>
